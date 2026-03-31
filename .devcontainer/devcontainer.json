@@ -1,0 +1,25 @@
+{
+    "name": "docker python",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder}/.leetcode,target=/root/.leetcode,type=bind"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "donjayamanne.python-extension-pack",
+                "LeetCode.vscode-leetcode"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+    }
+}
